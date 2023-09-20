@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    
+    <canvas width="600" height="400"></canvas>
+
+
+    <script>
+        let tela = document.querySelector("canvas")
+        let ctx = tela.getContext("2d")
+
+        let quadradoVerde = (x, y, width, height) => {
+            ctx.strokeStyle = "green"
+            ctx.strokeRect(x, y, width, height)
+        }
+
+        quadradoVerde(10, 10, 100, 100)
+        quadradoVerde(60, 60, 100, 100)
+
+        ctx.strokeStyle = "green"
+        ctx.beginPath()
+        ctx.moveTo(10, 10)
+        ctx.lineTo(60,60)
+        ctx.moveTo(110, 10)
+        ctx.lineTo(160, 60)
+        ctx.moveTo(10, 110)
+        ctx.lineTo(60, 160)
+        ctx.moveTo(110, 110)
+        ctx.lineTo(160, 160)
+        ctx.stroke()
+        
+    </script>
+</body>
+</html>

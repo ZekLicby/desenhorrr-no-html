@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <canvas width="600" height="400"></canvas>
+
+
+    <script>
+        var tela = document.querySelector("canvas")
+        var ctx = tela.getContext("2d")
+
+        ctx.fillStyle = 'gray'
+        ctx.fillRect(0, 0, 600, 400)
+
+        function clicado(e){
+            
+            var x = e.pageX - tela.offsetLeft;
+            var y = e.pageY - tela.offsetTop;
+
+            ctx.fillStyle = 'red'
+            ctx.beginPath()
+            ctx.arc(x, y, 10, 0, 2 * 3.14)
+            ctx.fill()
+            ctx.fillStyle = 'green'
+            ctx.beginPath()
+            ctx.arc(x-1, y-1, 10, 0, 2 * 3.14)
+            ctx.fill()
+            ctx.fillStyle = 'blue'
+            ctx.beginPath()
+            ctx.arc(x-2, y-2, 10, 0, 2 * 3.14)
+            ctx.fill()
+            
+        }
+
+        tela.onpointermove = clicado
+        
+    </script>
+</body>
+</html>
